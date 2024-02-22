@@ -1,0 +1,144 @@
+:root {
+  --clr-primary: #645cff;
+  --clr-primary-dark: #282566;
+  --clr-primary-light: #a29dff;
+  --clr-grey-1: #102a42;
+  --clr-grey-5: #617d98;
+  --clr-grey-10: #f1f5f8;
+  --clr-white: #fff;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  --radius: 0.25rem;
+  --large-screen-width: 1170px;
+  --small-screen-width: 90vw;
+  --fixed-width: 50rem;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+.navbar,
+.dropDown {
+  color: #ffffff;
+  background-color: #061538;
+}
+
+.categories {
+  width: 600px;
+}
+
+.navbar .searchButton {
+  outline: none;
+  border: none;
+  border-radius: 0;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  background-color: #447cddff;
+  color: #ffffff;
+}
+
+.navbar .formInput {
+  outline: none;
+  border: none;
+  border-radius: 0;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  background-color: #3d98e9ff;
+}
+
+.navbar .formInput::placeholder {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.navbar .account {
+  width: 300px;
+}
+
+.navbar .helpDesk ul li {
+  width: 300px;
+  list-style: none;
+}
+
+.navbar #navbarScrollingDropdown {
+  outline: 0;
+  border: none;
+  color: #fff;
+}
+
+.navbar .brand {
+  color: #3d98e9ff;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.navbar .navLink,
+.cart {
+  color: #fff;
+}
+
+.navbar .navBarToggle {
+  background-color: #ffffff;
+}
+ .nav-container {
+  display: block;
+  position: relative;
+}
+
+nav svg {
+  width: 30px;
+  color: var(--clr-white);
+}
+
+.amount-container {
+  position: absolute;
+  top: -0.6rem;
+  /* right: -0.6rem; */
+  left: 20px;
+
+
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background: var(--clr-primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.total-amount {
+    color: var(--clr-white);
+    margin-bottom: 0;
+    font-size: 1.25rem;
+}
+
+/* Mobile */
+@media only screen and (max-width: 768px) {
+  .categories,
+  .account,
+  .helpDesk {
+    width: 100%;
+  }
+  .amount-container {
+      position: absolute;
+      top: -0.6rem;
+      /* right: rem; */
+      left: 20px;
+      width: 1.75rem;
+      height: 1.75rem;
+      border-radius: 50%;
+      background: var(--clr-primary-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .total-amount {
+      color: var(--clr-white);
+      margin-bottom: 0;
+      font-size: 1.25rem;
+  }
+}
