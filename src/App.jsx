@@ -1,40 +1,27 @@
 import { useSelector, useDispatch } from "react-redux";
-import {
-  increment,
-  decrement,
-  incrementByAmount,
-  clearCounter,
-} from "./countSlice";
 import "./App.css";
-import NavBar from "./Navbar/Navbar";
+import { NavBar } from "./Navbar/Navbar";
+import CartContainer from "./CartContainer";
+import { calculateTotals } from "./features/cart/cartSlice";
+import { useEffect } from "react";
+import {Modal} from "./Modal";
 
 export function App() {
   const count = useSelector((state) => state.counter.count);
+  const {cartItems} = useSelector((state) => state.cart)
+  const {isOpen} = useSelector((state) => state.modal)
+
   const dispatch = useDispatch();
+
+  useEffect(()=>{
+    dispatch(calculateTotals())
+  },[cartItems])
   return (
     <>
+     {isOpen && <Modal/>}
       <NavBar />
-      <h1>Count: {count}</h1>
-      <button
-        className="btn btn-primary me-2"
-        onClick={() => dispatch(increment())}
-      >
-        Increment
-      </button>
-      <button
-        className="btn btn-primary me-2"
-        onClick={() => dispatch(decrement())}
-      >
-        Decrement
-      </button>
-      <button
-        className="btn btn-primary me-2"
-        onClick={() => dispatch(incrementByAmount(10))}
-      >
-        Increment By Amount
-      </button>
-      <button className="btn btn-primary me-2" onClick={() => dispatch(clearCounter())}>Clear</button>
+      <CartContainer/>
+     
     </>
   );
 }
-

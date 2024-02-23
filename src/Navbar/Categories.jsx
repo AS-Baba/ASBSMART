@@ -1,6 +1,6 @@
 import React from "react";
 
-const Categories = () => {
+export const Categories = () => {
   return (
     <>
       <div className=" container ">
@@ -85,4 +85,3 @@ const Categories = () => {
   );
 };
 
-export default Categories;

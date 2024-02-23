@@ -2,7 +2,7 @@ import React from "react";
 import { BsFillPatchQuestionFill } from "react-icons/bs";
 
 
-const HelpDesk = () => {
+export const HelpDesk = () => {
   return (
     <div>
       <ul>
@@ -32,4 +32,3 @@ const HelpDesk = () => {
   );
 };
 
-export default HelpDesk;

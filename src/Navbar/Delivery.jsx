@@ -1,6 +1,6 @@
 import React from "react";
 
-const Delivery = () => {
+export const Delivery = () => {
   return (
     <div>
       <div className="mb-3 ">
@@ -11,10 +11,9 @@ const Delivery = () => {
       </div>
         <input
           type="submit"
-          className="btn btn-outline-success"
+          className="btn btn-outline-primary"
         />
     </div>
   );
 };
 
-export default Delivery;

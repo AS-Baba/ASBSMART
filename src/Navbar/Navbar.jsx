@@ -9,15 +9,16 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import Categories from "./Categories";
-import Account from "./Account";
-import HelpDesk from "./HelpDesk";
-import Delivery from "./Delivery";
+import { Categories } from "./Categories";
+import { Account } from "./Account";
+import { HelpDesk } from "./HelpDesk";
+import { Delivery } from "./Delivery";
 import { useSelector } from "react-redux";
 import { ShoppingCart } from "../assets/icons";
 
-function NavBar() {
-  const amount = useSelector((state) => state.counter.count);
+export function NavBar() {
+  const { amount } = useSelector((state) => state.cart);
+  const count = useSelector((state) => state.counter.count);
 
   return (
     <Navbar expand="lg" className="navbar text-primary sticky-top">
@@ -72,7 +73,7 @@ function NavBar() {
               autoClose="outside"
             >
               <NavDropdown.Item>
-                <IoLocation /> Biu
+                <ShoppingCart /> Biu
               </NavDropdown.Item>
 
               <NavDropdown.Divider />
@@ -107,4 +108,4 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+// export default NavBar

@@ -1,5 +1,6 @@
 :root {
   --clr-primary: #645cff;
+  --clr-brand-color: #3d98e9ff;
   --clr-primary-dark: #282566;
   --clr-primary-light: #a29dff;
   --clr-grey-1: #102a42;
@@ -84,7 +85,7 @@ p {
 .navbar .navBarToggle {
   background-color: #ffffff;
 }
- .nav-container {
+.nav-container {
   display: block;
   position: relative;
 }
@@ -99,20 +100,19 @@ nav svg {
   top: -0.6rem;
   /* right: -0.6rem; */
   left: 20px;
-
-
-  width: 1.75rem;
+  width: auto;
+  min-width:1.75rem;
   height: 1.75rem;
   border-radius: 50%;
-  background: var(--clr-primary-light);
+  background: var(--clr-brand-color);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .total-amount {
-    color: var(--clr-white);
-    margin-bottom: 0;
-    font-size: 1.25rem;
+  color: var(--clr-white);
+  margin-bottom: 0;
+  font-size: 1.25rem;
 }
 
 /* Mobile */
@@ -123,22 +123,23 @@ nav svg {
     width: 100%;
   }
   .amount-container {
-      position: absolute;
-      top: -0.6rem;
-      /* right: rem; */
-      left: 20px;
-      width: 1.75rem;
-      height: 1.75rem;
-      border-radius: 50%;
-      background: var(--clr-primary-light);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    position: absolute;
+    top: -0.6rem;
+    /* right: rem; */
+    left: 20px;
+    width: auto;
+    min-width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+    background: var(--clr-primary-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .total-amount {
-      color: var(--clr-white);
-      margin-bottom: 0;
-      font-size: 1.25rem;
+    color: var(--clr-white);
+    margin-bottom: 0;
+    font-size: 1.25rem;
   }
 }
