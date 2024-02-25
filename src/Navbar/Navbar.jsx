@@ -18,7 +18,6 @@ import { ShoppingCart } from "../assets/icons";
 
 export function NavBar() {
   const { amount } = useSelector((state) => state.cart);
-  const count = useSelector((state) => state.counter.count);
 
   return (
     <Navbar expand="lg" className="navbar text-primary sticky-top">

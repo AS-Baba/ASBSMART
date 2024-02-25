@@ -1,0 +1,54 @@
+body {
+  /* position: fixed; */
+  /* Sit on top of the page content */
+  /* display: none; */
+  /* Hidden by default */
+  width: 100%;
+  /* Full width (cover the whole page) */
+  height: 100%;
+  /* Full height (cover the whole page) */
+  /* top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Black background with opacity */
+  z-index: 2;
+  /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer;
+  /* Add a pointer on hover */
+}
+.cartContainer {
+  margin: auto;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  padding: 10px;
+  position: absolute;
+  top: 20%;
+  left: 0;
+  right: 0;
+  /* -ms-transform: translateY(-50%); */
+  /* transform: translateY(-50%); */
+  background-color: #ffffffbe;
+  color: #0d0d0e;
+  z-index: 9;
+}
+body.active-modal {
+  overflow: hidden;
+}
+
+.deliveryCard {
+    width: 100%;
+    height: auto;
+    font-size: 11px;
+    font-weight: 400;
+    margin: 10px auto;
+}
+
+@media only screen and (max-width: 768px) {
+  .cartContainer {
+    width: 100%;
+    height: auto;
+  }
+}
