@@ -6,7 +6,7 @@ export const getSingleProduct = createAsyncThunk(
     "viewProduct/getSingleProduct",
     async (id) => {
         const response = await productServices.loadItem(id);
-        console.log(response);
+        // console.log(response);
         return response.data;
     }
     );
@@ -22,15 +22,15 @@ export const getSingleProduct = createAsyncThunk(
       state.isLoading = true;
     });
     builder.addCase(getProductItems.fulfilled, (state, { payload }) => {
-      console.log("from getsingle", payload);
+      // console.log("from getsingle", payload);
       state.singleProduct = payload
     });
     builder.addCase(getSingleProduct.fulfilled, (state, { payload }) => {
       state.find((item) => item.id === payload.id);
-      console.log("fulfiled from getSingle item",payload)
+      // console.log("fulfiled from getSingle item",payload)
     });
   },
 });
-console.log(viewProductSlice);
+// console.log(viewProductSlice);
 
 export default viewProductSlice.reducer;

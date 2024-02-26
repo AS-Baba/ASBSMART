@@ -4,11 +4,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { increment, decrement, removeItem } from "./features/cart/cartSlice";
 import { openModal } from "./features/Modal/modalSlice";
 
-export default function CartItem({ id, img, title, price, amount }) {
+export default function CartItem({ id, image, title, price, amount }) {
   const dispatch = useDispatch();
   return (
     <article className="cart-item">
-      <img src={img} alt={title} />
+      <img src={image} alt={title} />
       <div>
         <h4>{title}</h4>
         <h4 className="item-price">&#8358;{price}</h4>

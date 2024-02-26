@@ -34,7 +34,7 @@ const productSlice = createSlice({
     });
   },
 });
-console.log(productSlice);
+// console.log(productSlice);
 // Action creators are generated for each case reducer function
 export const {} = productSlice.actions;
 

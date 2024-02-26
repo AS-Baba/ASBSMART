@@ -10,11 +10,17 @@ import { productServices } from "../../features/Product/ProductSlice";
 import { getSingleProduct } from "./features/viewProductSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { addToCart } from "../../features/cart/cartSlice";
 
 export const ViewProduct = () => {
+  const dispatch = useDispatch();
+
+  const handleAddToCart = (product) =>{
+    dispatch(addToCart(product))
+  }
+
   const [item, setItem] = useState([]);
   const { id } = useParams();
-  const dispatch = useDispatch();
 
   const fetchDetails = useCallback(() => {
     dispatch(getSingleProduct({ id: id }));
@@ -77,7 +83,7 @@ export const ViewProduct = () => {
             <p className="card-text">{item?.category}</p>
             <p className="card-text">Free delivery to anywhere in Biu</p>
             <Link to="/cartcontainer">
-              <button className="btn btn-block btn-primary mt-3 w-100 ">
+              <button className="btn btn-block btn-primary mt-3 w-100 " onClick={() => {handleAddToCart(item)}}>
                 <FaShoppingCart /> Add To Cart
               </button>
             </Link>

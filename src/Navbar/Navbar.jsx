@@ -14,6 +14,7 @@ import { HelpDesk } from "./HelpDesk";
 import { Delivery } from "./Delivery";
 import { useSelector } from "react-redux";
 import { ShoppingCart } from "../assets/icons";
+import { Link } from "react-router-dom";
 
 export function NavBar() {
   const { amount } = useSelector((state) => state.cart);
@@ -21,7 +22,9 @@ export function NavBar() {
   return (
     <Navbar expand="lg" className="navbar text-primary sticky-top">
       <Container fluid>
-        <Navbar.Brand className="brand">ASB'Smart</Navbar.Brand>
+        <Link to="/">
+          <Navbar.Brand className="brand">ASB'Smart</Navbar.Brand>
+        </Link>
         <Navbar.Toggle aria-controls="navbarScroll" className="navBarToggle" />
         <Navbar.Collapse id="navbarScroll" className="dropDown">
           <Nav className="nav " style={{ maxHeight: "auto" }} navbarScroll>
@@ -52,9 +55,7 @@ export function NavBar() {
             >
               <NavDropdown.Item>
                 <div className="d-flex">
-                  <h3 className="card-title">
-                    Account
-                  </h3>
+                  <h3 className="card-title">Account</h3>
 
                   {/* <button className="btn btn-danger ">LogOut</button> */}
                 </div>
@@ -91,14 +92,16 @@ export function NavBar() {
                 <HelpDesk />
               </div>
             </NavDropdown>
-            <Nav.Link className="cart text-white">
-              <div className="nav-container">
-                <ShoppingCart className = "cart"/>
-                <div className="amount-container">
-                  <p className="total-amount">{amount}</p>
+              <Nav.Link className="cart text-white">
+            <Link to="/cartcontainer">
+                <div className="nav-container">
+                  <ShoppingCart className="cart" />
+                  <div className="amount-container">
+                    <p className="total-amount">{amount}</p>
+                  </div>
                 </div>
-              </div>
-            </Nav.Link>
+            </Link>
+              </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

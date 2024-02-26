@@ -181,7 +181,7 @@ Cart Item
   margin: 1.5rem 0;
 }
 .cart-item img {
-  width: 5rem;
+  width: 100%;
   height: 5rem;
   object-fit: cover;
 }
