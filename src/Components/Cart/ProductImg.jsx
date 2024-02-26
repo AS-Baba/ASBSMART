@@ -5,7 +5,7 @@ import { FaFacebook, FaTwitter, FaWhatsapp } from "react-icons/fa";
 export const ProductImg = () => {
   return (
     <div className="col-md-4">
-      <div className=" productImg card bg-transparent">
+      <div className=" productImg  card bg-transparent">
         <img src={image} alt="" className="card-img-top" height={300} />
         <div className="row m-auto">
           <div className="col m-auto rounded"><img src={image} alt="" width={50} height={50} /></div>

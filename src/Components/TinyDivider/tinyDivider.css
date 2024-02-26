@@ -4,12 +4,12 @@
   margin: auto;
 
   margin-top: 1rem;
-  width: 20px;
+  width: 90px;
   margin-bottom: 30px;
 }
 .headerContainer .header {
-    font-weight: 900;
-    font-size: 2rem;
+  font-weight: 900;
+  font-size: 2rem;
   word-spacing: 5px;
   letter-spacing: 4px;
   color: #3d98e9ff;

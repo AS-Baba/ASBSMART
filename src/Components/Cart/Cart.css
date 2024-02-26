@@ -18,7 +18,7 @@ body {
   cursor: pointer;
   /* Add a pointer on hover */
 }
-.cartContainer {
+ .cartContainer {
   margin: auto;
   width: 100%;
   height: auto;
@@ -39,11 +39,11 @@ body.active-modal {
 }
 
 .deliveryCard {
-    width: 100%;
-    height: auto;
-    font-size: 11px;
-    font-weight: 400;
-    margin: 10px auto;
+  width: 100%;
+  height: auto;
+  font-size: 11px;
+  font-weight: 400;
+  margin: 10px auto;
 }
 
 @media only screen and (max-width: 768px) {

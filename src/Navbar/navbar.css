@@ -77,7 +77,7 @@ p {
   text-transform: uppercase;
 }
 
-.navbar .navLink,
+nav .navLink,
 .cart {
   color: #fff;
 }
@@ -92,7 +92,7 @@ p {
 
 nav svg {
   width: 30px;
-  color: var(--clr-white);
+  /* color: var(--clr-white); */
 }
 
 .amount-container {

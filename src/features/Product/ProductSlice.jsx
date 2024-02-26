@@ -9,10 +9,10 @@ export const getProductItems = createAsyncThunk(
   "product/getProductItem",
   async () => {
     const response = await productServices.getItems();
-    console.log(response)
     return response.data;
   }
 );
+
 
 const initialState = {
   products: [],
@@ -26,7 +26,6 @@ const productSlice = createSlice({
       state.isLoading = true;
     });
     builder.addCase(getProductItems.fulfilled, (state, { payload }) => {
-      console.log("Her", payload);
       state.isLoading = false;
       state.products = payload;
     });

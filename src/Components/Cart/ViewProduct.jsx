@@ -1,15 +1,24 @@
-import React, { useEffect, useState } from "react";
+import "./Cart.css";
+import React, { useCallback, useEffect, useState } from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import { FaFacebook, FaTwitter, FaWhatsapp } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
 
-import {DeliveryDetails} from "./DeliveryDetails";
+import { DeliveryDetails } from "./DeliveryDetails";
 import { useParams } from "react-router";
 import { productServices } from "../../features/Product/ProductSlice";
+import { getSingleProduct } from "./features/viewProductSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
-export const Cart = () => {
-  const { id } = useParams();
+export const ViewProduct = () => {
   const [item, setItem] = useState([]);
+  const { id } = useParams();
+  const dispatch = useDispatch();
+
+  const fetchDetails = useCallback(() => {
+    dispatch(getSingleProduct({ id: id }));
+  }, [dispatch, id]);
 
   const loadItem = async () => {
     const response = await productServices.loadItem(id);
@@ -17,18 +26,26 @@ export const Cart = () => {
     setItem(response.data);
   };
 
+  // useEffect(()=>{
+  //   fetchDetails()
+  // },[fetchDetails])
+
   useEffect(() => {
     loadItem();
   }, []);
 
   return (
     <div className=" container cartContainer ">
-      {console.log('Hello',item)}
       <div className="row">
         {/* <ProductImg /> */}
         <div className="col-md-4">
           <div className=" productImg card bg-transparent">
-            <img src={item?.image} alt="" className="card-img-top" height={300} />
+            <img
+              src={item?.image}
+              alt=""
+              className="card-img-top"
+              height={300}
+            />
             <div className="row m-auto">
               <div className="col m-auto rounded">
                 <img src={item?.image} alt="" width={50} height={50} />
@@ -59,9 +76,11 @@ export const Cart = () => {
             <p className="card-text">{item?.title}</p>
             <p className="card-text">{item?.category}</p>
             <p className="card-text">Free delivery to anywhere in Biu</p>
-            <button className="btn btn-block btn-primary mt-3 w-100 ">
-              <FaShoppingCart /> Add To Cart
-            </button>
+            <Link to="/cartcontainer">
+              <button className="btn btn-block btn-primary mt-3 w-100 ">
+                <FaShoppingCart /> Add To Cart
+              </button>
+            </Link>
           </div>
           {/* <SellersInfo /> */}
           <div className="card mt-4">
@@ -71,10 +90,10 @@ export const Cart = () => {
               <p className="card-title text-">
                 Mai Talkalma Shopping Complex Biu
               </p>
-              <button className="btn btn-outline-secondary me-3">
+              <button className="btn btn-outline-secondary m-1 ">
                 See Our Collections
               </button>
-              <button className="btn text-primary">
+              <button className="btn  text-primary">
                 <FaRegHeart className="h5" />
               </button>
             </div>
@@ -86,4 +105,3 @@ export const Cart = () => {
     </div>
   );
 };
-

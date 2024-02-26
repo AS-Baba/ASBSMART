@@ -1,6 +1,5 @@
 import "./navbar.css";
 import { IoLocation } from "react-icons/io5";
-import { FaUser } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
 
 import Button from "react-bootstrap/Button";
@@ -54,7 +53,7 @@ export function NavBar() {
               <NavDropdown.Item>
                 <div className="d-flex">
                   <h3 className="card-title">
-                    <FaUser /> Account
+                    Account
                   </h3>
 
                   {/* <button className="btn btn-danger ">LogOut</button> */}
@@ -72,7 +71,7 @@ export function NavBar() {
               autoClose="outside"
             >
               <NavDropdown.Item>
-                <ShoppingCart /> Biu
+                <IoLocation /> Biu
               </NavDropdown.Item>
 
               <NavDropdown.Divider />
@@ -92,9 +91,9 @@ export function NavBar() {
                 <HelpDesk />
               </div>
             </NavDropdown>
-            <Nav.Link className="cart">
+            <Nav.Link className="cart text-white">
               <div className="nav-container">
-                <ShoppingCart />
+                <ShoppingCart className = "cart"/>
                 <div className="amount-container">
                   <p className="total-amount">{amount}</p>
                 </div>

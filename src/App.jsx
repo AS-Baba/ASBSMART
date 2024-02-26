@@ -7,11 +7,13 @@ import { calculateTotals, getCartItems } from "./features/cart/cartSlice";
 import { useEffect } from "react";
 import { Modal } from "./Modal";
 import ProductsContainer from "./Components/ProductsContainer";
-import { Cart } from "./Components/Cart/Cart";
+import { ViewProduct } from "./Components/Cart/ViewProduct";
 import { Route, Routes } from "react-router-dom";
+import { getSingleProduct } from "./Components/Cart/features/viewProductSlice";
+import CartContainer from "./CartContainer";
 
 export function App() {
-  const { getProductItem } = useSelector((state) => state.products);
+  // const { getProductItem } = useSelector((state) => state.products);
 
   const { cartItems, isLoading } = useSelector((state) => state.cart);
   const { isOpen } = useSelector((state) => state.modal);
@@ -29,6 +31,9 @@ export function App() {
   useEffect(() => {
     dispatch(getProductItems());
   }, []);
+  useEffect(()=>{
+    dispatch(getSingleProduct())
+  },[getSingleProduct])
 
   if (isLoading) {
     return (
@@ -42,7 +47,8 @@ export function App() {
       {isOpen && <Modal />}
       <NavBar />
       <Routes>
-        <Route path="/cart/:id" element={<Cart />} />
+        <Route path="/viewproduct/:id" element={<ViewProduct />} />
+        <Route path="/cartcontainer" element = {<CartContainer/>}/>
         <Route
           path="/"
           element={

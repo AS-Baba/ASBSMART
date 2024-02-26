@@ -3,10 +3,10 @@ import "./tinyDivider.css";
 export const TinyDivider = ({ children }) => {
   return (
     <>
-      <div class="container text-center headerContainer  mt-5">
-        <p class="header h5">{children}</p>
+      <div className="container text-center headerContainer  mt-5">
+        <p className="header h5">{children}</p>
       </div>
-      <div class="tiny-divider"></div>
+      <div className="tiny-divider"></div>
       <p></p>
     </>
   );
